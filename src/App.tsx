@@ -169,12 +169,8 @@ const HomeView = () => (
             Meistere die Geografie durch Farben und Formen. Ein minimalistisches Quiz für Präzision und Geschwindigkeit.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-primary text-black px-10 py-5 text-sm font-black uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-primary/10">
+            <button className="bg-primary text-black px-12 py-5 text-sm font-black uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-primary/10">
               Download Store
-            </button>
-            <button className="flex items-center gap-4 text-zinc-500 font-black uppercase tracking-widest text-xs hover:text-white transition-all">
-              Launch Demo
-              <ChevronRight className="w-5 h-5 text-primary" />
             </button>
           </div>
         </motion.div>

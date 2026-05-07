@@ -5,8 +5,6 @@ import {
   Flag, 
   Map, 
   Shield, 
-  Globe2, 
-  Trophy, 
   ChevronRight,
   Download,
   Menu,
@@ -89,67 +87,6 @@ const Navbar = ({ onNavigate, currentPage }: { onNavigate: (p: Page) => void, cu
   );
 };
 
-const MockPhone = () => {
-  return (
-    <div className="w-[320px] h-[640px] bg-black rounded-[48px] border-[8px] border-zinc-800 shadow-2xl relative flex flex-col overflow-hidden">
-      {/* Android Status Bar */}
-      <div className="h-8 px-8 flex items-center justify-between text-[10px] font-bold text-zinc-500">
-        <span>14:20</span>
-        <div className="flex gap-1 items-center">
-          <div className="w-3 h-3 border border-white/20 rounded-sm"></div>
-          <div className="w-4 h-2 bg-white/40 rounded-sm"></div>
-        </div>
-      </div>
-
-      {/* App Content */}
-      <div className="flex-1 flex flex-col p-6 bg-black">
-        <div className="flex justify-between items-center mb-8">
-          <span className="text-zinc-500 text-[10px] tracking-widest uppercase font-bold">Level 14</span>
-          <span className="text-primary text-xs font-black">840 PTS</span>
-        </div>
-
-        {/* Game Area */}
-        <div className="flex-1 flex flex-col items-center justify-center">
-          <motion.div 
-             initial={{ scale: 0.9, opacity: 0 }}
-             animate={{ scale: 1, opacity: 1 }}
-             className="w-48 h-48 bg-zinc-900 rounded-3xl flex items-center justify-center mb-12 border border-white/5 shadow-inner"
-          >
-            <Flag className="w-24 h-24 text-primary opacity-90" />
-          </motion.div>
-          
-          <div className="w-full space-y-4">
-            <div className="text-center">
-              <p className="text-zinc-500 text-[10px] uppercase tracking-widest mb-6 font-bold">Identify the Country</p>
-              <div className="flex justify-center gap-2 mb-10">
-                {['G', 'E', 'R', 'M', '_'].map((char, i) => (
-                  <div key={i} className={`w-9 h-11 bg-zinc-800 rounded flex items-center justify-center font-black ${char === '_' ? 'border border-primary/50 text-primary' : 'text-white'}`}>
-                    {char}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Hint Keyboard Mockup */}
-            <div className="grid grid-cols-7 gap-1.5 opacity-40">
-              {['Q', 'W', 'E', 'R', 'T', 'Z', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F'].map(k => (
-                <div key={k} className="h-8 bg-zinc-800 rounded flex items-center justify-center text-[10px] font-bold">{k}</div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Android Nav Bar */}
-        <div className="h-12 flex items-center justify-around opacity-20">
-          <div className="w-3 h-3 border-2 border-white/40 rotate-45"></div>
-          <div className="w-3 h-3 rounded-full border-2 border-white/40"></div>
-          <div className="w-3 h-3 bg-white/40 rounded-sm"></div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const FeatureCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
   <motion.div 
     whileHover={{ y: -5 }}
@@ -216,7 +153,7 @@ const HomeView = () => (
   <>
     {/* Hero Section */}
     <section className="pt-40 pb-32 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-4xl mx-auto text-center">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -228,10 +165,10 @@ const HomeView = () => (
           <h1 className="text-huge mb-10">
             VEXI<br/><span className="text-zinc-800">LLO</span>
           </h1>
-          <p className="text-xl text-zinc-400 mb-12 leading-relaxed max-w-sm font-light">
+          <p className="text-xl text-zinc-400 mb-12 leading-relaxed max-w-xl mx-auto font-light">
             Meistere die Geografie durch Farben und Formen. Ein minimalistisches Quiz für Präzision und Geschwindigkeit.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button className="bg-primary text-black px-10 py-5 text-sm font-black uppercase tracking-widest hover:bg-white transition-all shadow-2xl shadow-primary/10">
               Download Store
             </button>
@@ -241,19 +178,6 @@ const HomeView = () => (
             </button>
           </div>
         </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="relative flex justify-center py-20"
-        >
-          <div className="absolute w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px]"></div>
-          <MockPhone />
-          
-          <div className="absolute -right-10 bottom-20 rotate-90 origin-left">
-             <span className="text-[120px] font-black text-white/[0.02] select-none tracking-tighter">APP_V2.0</span>
-          </div>
-        </motion.div>
       </div>
     </section>
 
@@ -261,30 +185,20 @@ const HomeView = () => (
     <section id="features" className="py-32 px-6 bg-zinc-900/50">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row gap-10 items-end justify-between mb-24">
-           <h2 className="text-6xl font-black uppercase tracking-tighter italic">Engine<br/>Capabilities</h2>
+           <h2 className="text-6xl font-black uppercase tracking-tighter italic">System<br/>Architecture</h2>
            <p className="text-zinc-500 max-w-xs text-sm font-light leading-relaxed">Hochoptimierte Vektorgrafiken und Echtzeit-Rendering für ein flüssiges Erlebnis auf jedem Android Gerät.</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-white/5 border border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5">
           <FeatureCard 
             icon={Flag} 
-            title="Symmetry" 
+            title="Identity" 
             description="Entdecke Hunderte von Flaggen. Von den Klassikern bis zu den entlegensten Inselstaaten – lerne sie alle kennen."
           />
           <FeatureCard 
             icon={Map} 
             title="Borderlines" 
             description="Erkenne Länder an ihrer Form. Ein kniffliger Modus für alle, die Karten lieben und Wissenslücken schließen wollen."
-          />
-          <FeatureCard 
-            icon={Trophy} 
-            title="Domination" 
-            description="Vergleiche deine Ergebnisse in globalen Bestenlisten und schalte exklusive Erfolge für deine Leistungen frei."
-          />
-          <FeatureCard 
-            icon={Globe2} 
-            title="Intelligence" 
-            description="Zu jeder Flagge gibt es spannende Zusatzinfos über das Land, seine Hauptstadt und Bevölkerung."
           />
           <FeatureCard 
             icon={Shield} 
@@ -306,7 +220,7 @@ const HomeView = () => (
           GEOGRAPHY
        </div>
        <div className="relative z-10 max-w-2xl mx-auto">
-          <h2 className="text-7xl font-black mb-10 tracking-tighter uppercase italic italic">Bereit zum Start?</h2>
+          <h2 className="text-7xl font-black mb-10 tracking-tighter uppercase italic">Ready for<br/>Deployment</h2>
           <p className="text-zinc-500 text-lg mb-14 font-light leading-relaxed">
             Schließe dich Tausenden von Geografie-Enthusiasten an und werde heute noch zum Flaggen-Experten.
           </p>

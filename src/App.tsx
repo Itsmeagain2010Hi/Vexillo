@@ -8,10 +8,7 @@ import {
   ChevronRight,
   Download,
   Menu,
-  X,
-  Github,
-  Twitter,
-  Instagram
+  X
 } from 'lucide-react';
 
 // --- Types ---
@@ -113,13 +110,6 @@ const Footer = ({ onNavigate }: { onNavigate: (p: Page) => void }) => (
         <p className="max-w-md mb-10 text-sm italic font-light">
           Revolutionäres Geografie-Lernen. Ein brutalistisches Interface für maximale Konzentration auf das Wesentliche.
         </p>
-        <div className="flex gap-6">
-          {[Twitter, Instagram, Github].map((Icon, i) => (
-             <button key={i} className="text-zinc-600 hover:text-primary transition-colors">
-                <Icon className="w-5 h-5" />
-             </button>
-          ))}
-        </div>
       </div>
       
       <div>
@@ -130,19 +120,10 @@ const Footer = ({ onNavigate }: { onNavigate: (p: Page) => void }) => (
           <li><button className="hover:text-primary transition-colors">Safety</button></li>
         </ul>
       </div>
-
-      <div>
-        <h4 className="text-white text-[10px] font-black uppercase tracking-[0.3em] mb-10">System</h4>
-        <ul className="flex flex-col gap-5 text-xs font-bold uppercase tracking-widest">
-          <li><button className="hover:text-primary transition-colors">Android SDK</button></li>
-          <li><button className="hover:text-primary transition-colors">Contact</button></li>
-          <li><button className="hover:text-primary transition-colors">Status</button></li>
-        </ul>
-      </div>
     </div>
     <div className="max-w-7xl mx-auto pt-20 mt-20 border-t border-white/5 flex justify-between items-center text-[9px] font-black tracking-[0.4em] uppercase text-zinc-800">
-      <p>© 2024 VEXILLO LABS</p>
-      <p>EST 2024 // GERMANY</p>
+      <p>© 2026 VEXILLO LABS</p>
+      <p>EST 2026 // GERMANY</p>
     </div>
   </footer>
 );

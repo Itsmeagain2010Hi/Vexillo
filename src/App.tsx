@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { LEGAL_INFO } from './constants';
 import { 
   Smartphone, 
   Flag, 
@@ -216,31 +217,17 @@ const ImpressumView = () => (
       animate={{ opacity: 1 }}
       className="bg-zinc-900 p-16 border border-white/5"
     >
-      <h1 className="text-6xl font-black uppercase italic tracking-tighter mb-16 border-b border-white/5 pb-10">Impressum</h1>
+      <h1 className="text-6xl font-black uppercase italic tracking-tighter mb-16 border-b border-white/5 pb-10">
+        {LEGAL_INFO.impressum.title}
+      </h1>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-zinc-400 font-light leading-loose">
+      <div className="text-zinc-400 font-light leading-loose">
         <div>
-          <h2 className="text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6">Betreiber</h2>
-          <p className="text-lg">
-            Vexillo Labs Development<br />
-            Deep Tech Quarter 42<br />
-            10115 Berlin, Germany
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6">Kontakt</h2>
-          <p className="text-lg">
-            P: +49 30 9922 8811<br />
-            E: legal@vexillo-labs.tech
-          </p>
-        </div>
-
-        <div className="md:col-span-2 pt-16 border-t border-white/5">
-          <h2 className="text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6">Verantwortung</h2>
-          <p className="text-sm">
-            Inhaltlich verantwortlich: Chief Design Officer A. Vexill.<br/>
-            Sämtliches Bildmaterial unterliegt dem Copyright von Vexillo Labs.
+          <h2 className="text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+            {LEGAL_INFO.impressum.label}
+          </h2>
+          <p className="text-2xl text-primary font-bold">
+            {LEGAL_INFO.impressum.email}
           </p>
         </div>
       </div>
@@ -255,27 +242,14 @@ const DatenschutzView = () => (
       animate={{ opacity: 1 }}
       className="bg-zinc-900 p-16 border border-white/5"
     >
-      <h1 className="text-6xl font-black uppercase italic tracking-tighter mb-16 border-b border-white/5 pb-10">Privacy</h1>
+      <h1 className="text-6xl font-black uppercase italic tracking-tighter mb-16 border-b border-white/5 pb-10">
+        {LEGAL_INFO.privacy.title}
+      </h1>
       
-      <div className="space-y-12 text-zinc-400 font-light leading-relaxed">
-        <section>
-          <h2 className="text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6">01. Grundsatz</h2>
-          <p className="text-lg">Wir glauben an absolute Datensparsamkeit. Unser System ist so konzipiert, dass für den Spielbetrieb keine Registrierung oder Übermittlung von persönlichen Identifikationsmerkmalen notwendig ist.</p>
-        </section>
-
-        <section>
-          <h2 className="text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6">02. App Engine Analytics</h2>
-          <p>Zur Verbesserung der Performance werden anonyme Systemmetriken (Ladezeiten, Crash-Reports) verarbeitet. Diese Daten lassen zu keinem Zeitpunkt Rückschlüsse auf Ihre Person zu.</p>
-        </section>
-
-        <section>
-          <h2 className="text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6">03. Lokale Speicherung</h2>
-          <p>Ihre Spielstände und errungene Trophäen werden ausschließlich lokal auf Ihrem Android Endgerät gespeichert.</p>
-        </section>
-
-        <div className="p-8 border-l-4 border-primary bg-primary/5 text-xs italic tracking-wide mt-20">
-          Rechtlicher Hinweis: Diese Dokumentation dient der Demonstration des App-Designs und stellt keine verbindliche Rechtsberatung dar.
-        </div>
+      <div className="space-y-12 text-zinc-400 font-light leading-relaxed whitespace-pre-wrap">
+        <p className="text-lg">
+          {LEGAL_INFO.privacy.content}
+        </p>
       </div>
     </motion.div>
   </section>
